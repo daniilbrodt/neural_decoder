@@ -36,23 +36,23 @@ Our goal is to create a convolutional neural network decoder that has a similar 
 
 ![A close-up of a human skull
 
-Description automatically generated with low confidence](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.001.jpeg)
+Description automatically generated with low confidence](001.jpeg)
 
 **Figure 1: patient 0: strips and grid**
 
 Our programming language of choice was Python and we set up a Conda virtual environment with all the necessary libraries. The main libraries were TensorFlow and Keras since it would be best to compare with HTNet which also uses the same libraries. Then in the code we read the dataset and preprocess the data to delete channels contaminated with artifacts and EEG channels. We also filter 50 Hz harmonics and restrict data to 0-200 Hz range. After standardizing the data, we create a 2D convolutional neural network that has four convolutional layers and Dense layers (figure 2). After the training on GPU, we evaluate the best model by comparing predicted and test results. To do that we make a confusion matrix and find out the real-world accuracy.
 
-![](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.002.png)![Diagram
+![](002.png)![Diagram
 
-Description automatically generated](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.003.png)
+Description automatically generated](003.png)
 
 **Figure 2: OKITI model**
 
 We also tried to replicate a study on HTNet which is based on densely connected neural networks that can be applied for transfer learning. We set up a Google Colab environment for that. HTNet is innovative because it will find the overlapping areas of electrodes for the best prediction, and it uses Hilbert transform. The architecture consists of three convolutional layers: 1D temporal convolution as a band-pass filtering, a depthwise convolution as a spatial filter, and a separable convolution as a classifier of temporal features. The author makes use of the Hilbert transform layer after the first convolutional layer to compute spectral power at data-driven frequencies. There are also pooling, dense, and other layers (figure 3).
 
-![](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.004.png)![Diagram
+![](004.png)![Diagram
 
-Description automatically generated](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.005.png)
+Description automatically generated](005.png)
 
 **Figure 3: neural network model of the first patient in HTNet**
 
@@ -62,17 +62,17 @@ We received great confusion matrices (figures 4-5) and an accuracy of roughly 90
 
 ![Text
 
-Description automatically generated](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.006.png)
+Description automatically generated](006.png)
 
 **Figure 4: Subject 00 confusion matrix and accuracy**
 
 ![Text
 
-Description automatically generated](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.007.png)
+Description automatically generated](007.png)
 
 **Figure 5: Subject 01 confusion matrix and accuracy**
 
-![](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.008.png)
+![](008.png)
 
 **Figure 6**
 
@@ -80,9 +80,9 @@ The replication of HTNet was not ideal since it takes days to train the model an
 
 ![Graphical user interface, calendar
 
-Description automatically generated with medium confidence](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.009.png)![Application
+Description automatically generated with medium confidence](009.png)![Application
 
-Description automatically generated with medium confidence](Aspose.Words.23a8b37e-8801-4110-a5ca-c253a4f56cac.010.png)
+Description automatically generated with medium confidence](010.png)
 
 **Figure 7: replicated plot (original on the right)**
 
