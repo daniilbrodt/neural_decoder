@@ -34,25 +34,23 @@ Thus, in the last decades a great number of works appeared, which implement deco
 
 Our goal is to create a convolutional neural network decoder that has a similar performance to HTNet(Peterson et al. 2021). We received a dataset from National Institute of Mental Health, Neurology and Neurosurgery – (henceforth OKITI): the study population was 16 patients that were implanted with ECoG to diagnose drug-resistant epilepsy. We used 64 channels for the model training at the minimum, but some subjects have nearly twice that number . However, one patient S09 had some unused channels denoted by x. The electrode configuration consisted of strips and grids (figure 3). We can read them as 1D and 2D arrays. To record the dataset patients were asked to perform specific movements: tapping with their finger, foot, hand, tongue. One patient tapped with both right and left fingers, feet, and hands. Sampling rate was either 1024Hz or 2048Hz. We used two datatypes of u16 and s32. The length of the movements can be determined with timestamps that is also recorded in excel file.
 
-![A close-up of a human skull
-
-Description automatically generated with low confidence](001.jpeg)
+![](001.jpeg)
 
 **Figure 1: patient 0: strips and grid**
 
 Our programming language of choice was Python and we set up a Conda virtual environment with all the necessary libraries. The main libraries were TensorFlow and Keras since it would be best to compare with HTNet which also uses the same libraries. Then in the code we read the dataset and preprocess the data to delete channels contaminated with artifacts and EEG channels. We also filter 50 Hz harmonics and restrict data to 0-200 Hz range. After standardizing the data, we create a 2D convolutional neural network that has four convolutional layers and Dense layers (figure 2). After the training on GPU, we evaluate the best model by comparing predicted and test results. To do that we make a confusion matrix and find out the real-world accuracy.
 
-![](002.png)![Diagram
+![](002.png)
 
-Description automatically generated](003.png)
+![](003.png)
 
 **Figure 2: OKITI model**
 
 We also tried to replicate a study on HTNet which is based on densely connected neural networks that can be applied for transfer learning. We set up a Google Colab environment for that. HTNet is innovative because it will find the overlapping areas of electrodes for the best prediction, and it uses Hilbert transform. The architecture consists of three convolutional layers: 1D temporal convolution as a band-pass filtering, a depthwise convolution as a spatial filter, and a separable convolution as a classifier of temporal features. The author makes use of the Hilbert transform layer after the first convolutional layer to compute spectral power at data-driven frequencies. There are also pooling, dense, and other layers (figure 3).
 
-![](004.png)![Diagram
+![](004.png)
 
-Description automatically generated](005.png)
+![](005.png)
 
 **Figure 3: neural network model of the first patient in HTNet**
 
@@ -60,15 +58,11 @@ Description automatically generated](005.png)
 
 We received great confusion matrices (figures 4-5) and an accuracy of roughly 90% (figure 6). In particular, the model predicted 100% accurately for four subjects which can be ascribed to overfitting. Nonetheless, this high accuracy is possible because of our small dataset, so the accuracy must be lower on a larger dataset. In addition, there was an error with a third subject which shows that there is a problem with encoding of the data and reading it correctly. We solved it by individual indexing to overcome an error.
 
-![Text
-
-Description automatically generated](006.png)
+![](006.png)
 
 **Figure 4: Subject 00 confusion matrix and accuracy**
 
-![Text
-
-Description automatically generated](007.png)
+![](007.png)
 
 **Figure 5: Subject 01 confusion matrix and accuracy**
 
@@ -78,11 +72,9 @@ Description automatically generated](007.png)
 
 The replication of HTNet was not ideal since it takes days to train the model and there is a limit in Google Colab where GPU can be used only for 12 hours continuously. We decided to limit the number of epochs to 2 since the author of HTNet also made graphs with just 2 epochs. It took 3 hours to train, but we were able to only reproduce one graph since we have not used the model for the unseen patients yet (figure 7).
 
-![Graphical user interface, calendar
+![](009.png)
 
-Description automatically generated with medium confidence](009.png)![Application
-
-Description automatically generated with medium confidence](010.png)
+![](010.png)
 
 **Figure 7: replicated plot (original on the right)**
 
