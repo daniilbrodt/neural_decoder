@@ -11,17 +11,13 @@ Our goal is to create a convolutional neural network decoder that has a similar 
 
 Our programming language of choice was Python and we set up a Conda virtual environment with all the necessary libraries. The main libraries were TensorFlow and Keras since it would be best to compare with HTNet which also uses the same libraries. Then in the code we read the dataset and preprocess the data to delete channels contaminated with artifacts and EEG channels. We also filter 50 Hz harmonics and restrict data to 0-200 Hz range. After standardizing the data, we create a 2D convolutional neural network that has four convolutional layers and Dense layers (figure 2). After the training on GPU, we evaluate the best model by comparing predicted and test results. To do that we make a confusion matrix and find out the real-world accuracy.
 
-![](002.png)
-
-![](003.png)
+![](002.png)                                ![](003.png)
 
 **Figure 2: OKITI model**
 
 We also tried to replicate a study on HTNet which is based on densely connected neural networks that can be applied for transfer learning. We set up a Google Colab environment for that. HTNet is innovative because it will find the overlapping areas of electrodes for the best prediction, and it uses Hilbert transform. The architecture consists of three convolutional layers: 1D temporal convolution as a band-pass filtering, a depthwise convolution as a spatial filter, and a separable convolution as a classifier of temporal features. The author makes use of the Hilbert transform layer after the first convolutional layer to compute spectral power at data-driven frequencies. There are also pooling, dense, and other layers (figure 3).
 
-![](004.png)
-
-![](005.png)
+![](004.png)                                ![](005.png)
 
 **Figure 3: neural network model of the first patient in HTNet**
 
