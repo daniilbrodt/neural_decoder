@@ -21,7 +21,7 @@ We also tried to replicate a study on HTNet which is based on densely connected 
 
 **Figure 3: neural network model of the first patient in HTNet**
 
-**Results and Discussion**
+## Results and Discussion
 
 We received great confusion matrices (figures 4-5) and an accuracy of roughly 90% (figure 6). In particular, the model predicted 100% accurately for four subjects which can be ascribed to overfitting. Nonetheless, this high accuracy is possible because of our small dataset, so the accuracy must be lower on a larger dataset. In addition, there was an error with a third subject which shows that there is a problem with encoding of the data and reading it correctly. We solved it by individual indexing to overcome an error.
 
@@ -47,13 +47,13 @@ We experimented on decoding synchronously recorded ECoG signals in offline mode.
 
 The main limitation of the study is a quantity of subjects since there are few patients implanted with ECoG. It is likely that the development of long-term implantation technology over time will increase the amount of data and provide new opportunities for research in this area, but experience with both invasive and noninvasive interfaces suggests that customizing the system for a particular user and working with it will remain individualized.
 
-**Conclusion**
+## Conclusion
 
 The performance of invasive brain-computer interfaces can be improved using deep learning algorithms since it allows to automatically identify features and model patterns in data at different levels of complexity, and provide additional capabilities, such as extracting information from unlabeled data or applying transfer learning technology.
 
 In the future we will make decoding of ECoG signals in real time and fine-tune HTNet parameters for OKITI dataset for comparison. We will try train with balanced class weights and solve an overfitting problem.
 
 
-**References**
+## References
 
 Peterson, S. M., Steine-Hanson, Z., Davis, N., Rao, R. P. N., & Brunton, B. W. (2021).
