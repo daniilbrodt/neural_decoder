@@ -1,7 +1,7 @@
 # Brain-computer interfaces (BCI) and neural decoders of  electrocorticographic (ECoG) signals
 
 
-**Methodology**
+##Methodology
 
 Our goal is to create a convolutional neural network decoder that has a similar performance to [HTNet(Peterson et al. 2021)](https://github.com/BruntonUWBio/HTNet_generalized_decoding). We received a dataset from National Institute of Mental Health, Neurology and Neurosurgery – (henceforth OKITI): the study population was 16 patients that were implanted with ECoG to diagnose drug-resistant epilepsy. We used 64 channels for the model training at the minimum, but some subjects have nearly twice that number . However, one patient S09 had some unused channels denoted by x. The electrode configuration consisted of strips and grids (figure 3). We can read them as 1D and 2D arrays. To record the dataset patients were asked to perform specific movements: tapping with their finger, foot, hand, tongue. One patient tapped with both right and left fingers, feet, and hands. Sampling rate was either 1024Hz or 2048Hz. We used two datatypes of u16 and s32. The length of the movements can be determined with timestamps that is also recorded in excel file.
 
