@@ -52,3 +52,8 @@ The main limitation of the study is a quantity of subjects since there are few p
 The performance of invasive brain-computer interfaces can be improved using deep learning algorithms since it allows to automatically identify features and model patterns in data at different levels of complexity, and provide additional capabilities, such as extracting information from unlabeled data or applying transfer learning technology.
 
 In the future we will make decoding of ECoG signals in real time and fine-tune HTNet parameters for OKITI dataset for comparison. We will try train with balanced class weights and solve an overfitting problem.
+
+
+**References**
+
+Peterson, S. M., Steine-Hanson, Z., Davis, N., Rao, R. P. N., & Brunton, B. W. (2021).
