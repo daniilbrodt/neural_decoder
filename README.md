@@ -1,5 +1,11 @@
 # Brain-computer interfaces (BCI) and neural decoders of  electrocorticographic (ECoG) signals
 
+## Table of Contents
+
+1. [Methodology](#methodology)
+2. [Results and Discussion](#results-and-discussion)  
+3. [Conclusion](#conclusion)
+4. [References](#references)
 
 ## Methodology
 
