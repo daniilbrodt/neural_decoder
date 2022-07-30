@@ -39,9 +39,7 @@ We received great confusion matrices (figures 4-5) and an accuracy of roughly 90
 
 The replication of HTNet was not ideal since it takes days to train the model and there is a limit in Google Colab where GPU can be used only for 12 hours continuously. We decided to limit the number of epochs to 2 since the author of HTNet also made graphs with just 2 epochs. It took 3 hours to train, but we were able to only reproduce one graph since we have not used the model for the unseen patients yet (figure 7).
 
-![](009.png)
-
-![](010.png)
+![](009.png)                                ![](010.png)
 
 **Figure 7: replicated plot (original on the right)**
 
