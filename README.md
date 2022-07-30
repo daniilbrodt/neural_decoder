@@ -56,4 +56,4 @@ In the future we will make decoding of ECoG signals in real time and fine-tune H
 
 ## References
 
-Peterson, S. M., Steine-Hanson, Z., Davis, N., Rao, R. P. N., & Brunton, B. W. (2021).
+[Peterson, S. M., Steine-Hanson, Z., Davis, N., Rao, R. P. N., & Brunton, B. W. (2021).](https://github.com/BruntonUWBio/HTNet_generalized_decoding)
